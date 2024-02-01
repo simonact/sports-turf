@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="icon" href="asserts/Sports Hive Portal-logos (1)/Sports Hive Portal-logos_transparent.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #FFCB05;
+        }
+        .user-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            color: #333333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button.logout-button {
+            background-color: #e74c3c;
+
+            .booking-slot-container {
+            text-align: center;
+        }
+
+        .booking-slot {
+            display: inline-block;
+            margin: 20px;
+            width: 200px;
+            height: 400px;
+            overflow:none;
+        }
+
+        .stadium-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .available-now {
+            font-size: 16px;
+            color: green;
+        }
+        }
+    </style>
+</head>
+<body>
+
+<div class="user-container">
+    <h2>User Page</h2>
+
+    <div class="booking-slot-container">
+        <div class="booking-slot">
+            <img src="asserts/slot/Nehru Stadium 2.jpg" alt="Stadium 1" width="500px">
+            <div class="stadium-name">Stadium 1</div>
+            <div class="available-now">Available Now</div>
+        </div>
+
+        <div class="booking-slot">
+            <img src="asserts/slot/Jawaharlal Nehru Stadium.jpg" alt="Stadium 2">
+            <div class="stadium-name">Stadium 2</div>
+            <div class="available-now">Available Now</div>
+        </div>
+
+        <div class="booking-slot">
+            <img src="asserts/slot/3.webp" alt="Stadium 3">
+            <div class="stadium-name">Stadium 3</div>
+            <div class="available-now">Available Now</div>
+        </div>
+    </div>
+
+    <!-- View Booking Slot Section -->
+    <h3>View Booking Slot</h3>
+    <button onclick="viewBookingSlots()">View Booking Slots</button>
+
+    <!-- Add / Choose Sports Section -->
+    <h3>Add / Choose Sports</h3>
+    <form id="addSportForm">
+        <label for="sport">Sport:</label>
+        <input type="text" id="sport" placeholder="Enter sport">
+        <button type="button" onclick="addSport()">Add Sport</button>
+    </form>
+
+    <!-- Update / Delete Sport Section -->
+    <h3>Update / Delete Sport</h3>
+    <form id="updateSportForm">
+        <label for="existingSport">Select Sport:</label>
+        <select id="existingSport">
+            <!-- Options will be dynamically added here -->
+        </select>
+        <button type="button" onclick="updateSport()">Update Sport</button>
+        <button type="button" onclick="deleteSport()">Delete Sport</button>
+    </form>
+
+    <!-- Add Tournament Section -->
+    <h3>Add Tournament</h3>
+    <form id="addTournamentForm">
+        <label for="tournamentSport">Sport:</label>
+        <input type="text" id="tournamentSport" placeholder="Enter sport">
+
+        <label for="numOfTeams">Number of Teams:</label>
+        <input type="number" id="numOfTeams" placeholder="Enter number of teams">
+
+        <label for="tournamentMonth">Month:</label>
+        <input type="text" id="tournamentMonth" placeholder="Enter month">
+
+        <button type="button" onclick="addTournament()">Add Tournament</button>
+    </form>
+
+    <!-- List Teams Section -->
+    <h3>List Teams</h3>
+    <table id="teamListTable">
+        <tr>
+            <th>Team Name</th>
+            <th>Action</th>
+        </tr>
+        <!-- Team rows will be dynamically added here -->
+    </table>
+
+    <!-- Player Register Section -->
+    <h3>Player Register</h3>
+    <form id="playerRegisterForm">
+        <label for="playerName">Player Name:</label>
+        <input type="text" id="playerName" placeholder="Enter player name">
+        <button type="button" onclick="registerPlayer()">Register Player</button>
+    </form>
+
+    <!-- Selected or Rejected Section -->
+    <h3>Selected or Rejected (By User Host)</h3>
+    <button onclick="viewSelectionStatus()">View Selection Status</button>
+
+    <!-- View Tournament Schedule Section -->
+    <h3>View Tournament Schedule</h3>
+    <button onclick="viewTournamentSchedule()">View Tournament Schedule</button>
+
+    <!-- My Profile Section -->
+    <h3>My Profile</h3>
+    <button onclick="viewUserProfile()">View My Profile</button>
+
+    <!-- Logout Button -->
+    <button class="logout-button" onclick="logout()">Logout</button>
+</div>
+
+<script>
+    function viewBookingSlots() {
+        // Implement logic to view booking slots
+        // For demonstration purposes, let's just log a message
+        console.log('Viewing Booking Slots...');
+    }
+
+    function addSport() {
+        // Implement logic to add sport
+        // For demonstration purposes, let's just log the data
+        var sport = document.getElementById('sport').value;
+        console.log('Added Sport:', sport);
+    }
+
+    function updateSport() {
+        // Implement logic to update sport
+        // For demonstration purposes, let's just log the data
+        var existingSport = document.getElementById('existingSport').value;
+        console.log('Updated Sport:', existingSport);
+    }
+
+    function deleteSport() {
+        // Implement logic to delete sport
+        // For demonstration purposes, let's just log a message
+        var existingSport = document.getElementById('existingSport').value;
+        console.log('Deleted Sport:', existingSport);
+    }
+
+    function addTournament() {
+        // Implement logic to add tournament
+        // For demonstration purposes, let's just log the data
+        var tournamentSport = document.getElementById('tournamentSport').value;
+        var numOfTeams = document.getElementById('numOfTeams').value;
+        var tournamentMonth = document.getElementById('tournamentMonth').value;
+
+        console.log('Added Tournament:', tournamentSport, 'Teams:', numOfTeams, 'Month:', tournamentMonth);
+    }
+
+    function registerPlayer() {
+        // Implement logic to register player
+        // For demonstration purposes, let's just log the data
+        var playerName = document.getElementById('playerName').value;
+        console.log('Registered Player:', playerName);
+    }
+
+    function viewSelectionStatus() {
+        // Implement logic to view selection status
+        // For demonstration purposes, let's just log a message
+        console.log('Viewing Selection Status...');
+    }
+
+    function viewTournamentSchedule() {
+        // Implement logic to view tournament schedule
+        // For demonstration purposes, let's just log a message
+        console.log('Viewing Tournament Schedule...');
+    }
+
+    function viewUserProfile() {
+        // Implement logic to view user profile
+        // For demonstration purposes, let's just log a message
+        console.log('Viewing User Profile...');
+    }
+
+    function logout() {
+        // Implement logic for logout
+        // For demonstration purposes, let's just log a message
+        console.log('Logged out.');
+        // Redirect to login page
+        window.location.href = 'login.html';
+    }
+
+    function viewBookingSlots() {
+            // Add your logic for viewing booking slots here
+            console.log('View Booking Slots clicked');
+        }
+</script>
+
+</body>
+</html>

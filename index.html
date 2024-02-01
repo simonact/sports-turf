@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Hive Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="asserts/Sports Hive Portal-logos (1)/Sports Hive Portal-logos_transparent.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="top-one">
+        <table>
+            <tr>
+                <td><img class="logo" src="https://drive.google.com/file/d/17TYgK2XSvrhxnxV1kp100oYyapCNZrlo/view?usp=drive_link"></td>
+                <td class="name"><span class="color">S</span>ports <span class="color">H</span>ive <span class="color">P</span>ortal</td>
+                <td class="tab"><a href="#home">Home</a></td>
+                <td class="tab"><a href="#aboutus">About Us</a></td>
+                <td class="tab"><a href="#contact-us">Contact Us</a></td>
+                <td class="tab nap"></td>
+                <td class="tab tab-2"><a href="#regi">Register</a></td>
+                <td class="tab tab-2"><a href="login.html">Login</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <hr class="hr-one">
+
+    <div class="top-two" id="home">
+        <div class="top-two2">
+            <div class="para">
+                <p class="para-1">Play your game on top-notch turfs, hassle-free booking, and ultimate sports experiences await!</p>
+            </div>
+            <img src="asserts/images/1_EYWk3sj1y7OZLfWO4fhkeQ.jpg" class="img-1">
+        </div>
+        <div class="quotes">Where Every Corner Tells a Story – Kovai Spot Finder! 🏏⚽</div>
+    </div>
+
+    <hr class="hr-one">
+
+    <div class="top-three" id="aboutus">
+        <div class="abt-us">
+            <p><b><u>Welcome to Sports Hive Portal</u></b><br />
+                At Sports Hive Portal, we're more than just a platform for booking sports facilities — we're a community of sports enthusiasts committed to enhancing your sports experience in Coimbatore.<br />
+                Our mission is to simplify the process of discovering and enjoying the best sports venues in the city. Whether you're a professional athlete, a weekend warrior, or someone looking to try a new sport, Sports Hive Portal is your gateway to a world of exciting possibilities.<br />
+                What sets us apart is our dedication to quality, convenience, and community. We've partnered with top-notch sports facilities to provide you with a diverse range of venues. Our user-friendly platform ensures that booking your favorite spot is a seamless and enjoyable experience. Join our community, connect with fellow sports lovers, and stay updated on the latest events and tournaments.<br />
+                <b>Our Team</b><br />
+                Behind Sports Hive Portal is a passionate team of individuals who share a love for sports and a vision for fostering a thriving sports culture in Coimbatore. Get to know the faces driving our mission:<br />
+                <b>John Doe - CEO:</b> Leading the way with a vision to make sports accessible to all.<br />
+                <b>Jane Smith - COO:</b> Ensuring smooth operations for an unparalleled user experience.<br />
+                <b>Mark Johnson - CTO:</b> Implementing innovative solutions for a cutting-edge platform.<br />
+                Thank you for being a part of Sports Hive Portal. Let's play, connect, and create memorable sports moments together!<br />
+            </p>
+        </div>
+    </div>
+
+    <hr class="hr-one">
+
+    <div class="top-four" id="contact-us">
+        <div class="center">
+            <div class="four-img"></div>
+            <div class="four-contact">
+                <div class="inquiry-container">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" placeholder="Enter your email">
+
+                    <p id="email-warning"></p>
+
+                    <label for="inquiry-message">Inquiry:</label>
+                    <textarea id="inquiry-message" placeholder="Enter your inquiry"></textarea>
+
+                    <button onclick="submitInquiry()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="top-five" id="regi">
+        <div class="registration-container">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" placeholder="Enter your first name">
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" placeholder="Enter your last name">
+
+            <label for="email-or-phone">Email or Phone:</label>
+            <input type="text" id="email-or-phone" placeholder="Enter your email or phone">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" placeholder="Confirm your password">
+
+            <p id="password-warning"></p>
+
+            <button onclick="validateForm()">Submit</button>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>

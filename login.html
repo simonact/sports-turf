@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="icon" href="asserts/Sports Hive Portal-logos (1)/Sports Hive Portal-logos_transparent.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #FFCB05;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter your username">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter your password">
+
+    <button onclick="loginAsUser()">Login as User</button>
+    <button onclick="loginAsAdmin()">Login as Admin</button>
+    <button onclick="navigateToBackPage()">Back</button>
+</div>
+
+<script>
+    function navigateToUserPage(username) {
+        // Replace 'userPage.html' with the actual URL for the user page
+        window.location.href = 'userlogin.html?username=' + username;
+    }
+
+    function navigateToAdminPage(username) {
+        // Replace 'adminPage.html' with the actual URL for the admin page
+        window.location.href = 'adminlogin.html?username=' + username;
+    }
+
+    function navigateToBackPage() {
+              window.location.href = 'index.html';
+    }
+
+    function loginAsUser() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        // Add authentication logic for users on the server side
+
+        // Simulating successful login for demonstration purposes
+        navigateToUserPage(username);
+    }
+
+    function loginAsAdmin() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Check if the email starts with "admin" and password is correct
+        if (username.toLowerCase().startsWith('admin') && password === 'adminpassword') {
+            // Simulating successful login for demonstration purposes
+            navigateToAdminPage(username);
+        } else {
+            alert('Incorrect password for admin. Please try again.');
+        }
+    }
+</script>
+
+</body>
+</html>

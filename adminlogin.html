@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="icon" href="asserts/Sports Hive Portal-logos (1)/Sports Hive Portal-logos_transparent.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #FFCB05;
+        }
+        .admin-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            color: #333333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button.back-button {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+<div class="admin-container">
+    <h2>Admin Page</h2>
+
+    <!-- Add Inventory Section -->
+    <h3>Add Inventory</h3>
+    <form id="addInventoryForm">
+        <label for="email">Email:</label>
+        <input type="text" id="email" placeholder="Enter email">
+
+        <label for="item">Item:</label>
+        <input type="text" id="item" placeholder="Enter item">
+
+        <label for="returnDate">Return Date:</label>
+        <input type="date" id="returnDate">
+
+        <label for="status">Status:</label>
+        <input type="text" id="status" placeholder="Enter status">
+
+        <button type="button" onclick="addInventory()">Add Inventory</button>
+    </form>
+
+    <!-- Inventory Table -->
+    <h3>Inventory List</h3>
+    <table id="inventoryTable">
+        <tr>
+            <th>Email</th>
+            <th>Item</th>
+            <th>Return Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        <!-- Inventory rows will be dynamically added here -->
+    </table>
+
+    <!-- Add Booking Slot Section -->
+    <h3>Add Booking Slot</h3>
+    <form id="addSlotForm">
+        <label for="slotTime">Slot Time:</label>
+        <input type="text" id="slotTime" placeholder="Enter slot time">
+
+        <label for="ground">Ground:</label>
+        <input type="text" id="ground" placeholder="Enter ground">
+
+        <label for="approve">Approve:</label>
+        <input type="checkbox" id="approve">
+
+        <label for="cancel">Cancel:</label>
+        <input type="checkbox" id="cancel">
+
+        <button type="button" onclick="addBookingSlot()">Add Booking Slot</button>
+    </form>
+
+    <!-- Booking Slot Table -->
+    <h3>Booking Slot List</h3>
+    <table id="bookingSlotTable">
+        <tr>
+            <th>Slot Time</th>
+            <th>Ground</th>
+            <th>Approve</th>
+            <th>Cancel</th>
+            <th>Action</th>
+        </tr>
+        <!-- Booking slot rows will be dynamically added here -->
+    </table>
+
+    <!-- View Booking Request Section -->
+    <h3>View Booking Request</h3>
+    <button onclick="viewBookingRequests()">View Booking Requests</button>
+
+    <!-- Back to Login Page Button -->
+    <button class="back-button" onclick="navigateToLoginPage()">Back to Login Page</button>
+</div>
+
+<script>
+    function addInventory() {
+        // Implement logic to add inventory
+        // For demonstration purposes, let's just log the data
+        var email = document.getElementById('email').value;
+        var item = document.getElementById('item').value;
+        var returnDate = document.getElementById('returnDate').value;
+        var status = document.getElementById('status').value;
+
+        console.log('Added Inventory:', email, item, returnDate, status);
+    }
+
+    function addBookingSlot() {
+        // Implement logic to add booking slot
+        // For demonstration purposes, let's just log the data
+        var slotTime = document.getElementById('slotTime').value;
+        var ground = document.getElementById('ground').value;
+        var approve = document.getElementById('approve').checked;
+        var cancel = document.getElementById('cancel').checked;
+
+        console.log('Added Booking Slot:', slotTime, ground, 'Approve:', approve, 'Cancel:', cancel);
+    }
+
+    function viewBookingRequests() {
+        // Implement logic to view booking requests
+        // For demonstration purposes, let's just log a message
+        console.log('Viewing Booking Requests...');
+    }
+
+    function navigateToLoginPage() {
+        // Replace 'login.html' with the actual URL for the login page
+        window.location.href = 'login.html';
+    }
+</script>
+
+</body>
+</html>
